@@ -34,3 +34,12 @@ describe('TD.compareTimes', function () {
     expect(TD.compareTimes('05:30', '03:30')).toBeTruthy();
   });
 });
+
+describe('TD.isDuration',function(){
+  test('00:00',function () {
+    expect(TD.isDuration('00:00')).toBeTruthy();
+  });
+  test('24:60',function () {
+    expect(TD.isDuration('24:60')).toBeFalsy();
+  });
+});
