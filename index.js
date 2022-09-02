@@ -30,7 +30,7 @@ TD.compareTimes = function (_a, _b) {
 };
 
 TD.isDuration = function (duration) {
-  return /^(2[0-3]|[01]?[0-9]):([0-5]?[0-9])$/.test(duration);
+  return /^(\d*):([0-5]?[0-9])$/.test(duration);
 };
 
 module.exports = TD;

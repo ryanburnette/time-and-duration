@@ -35,11 +35,23 @@ describe('TD.compareTimes', function () {
   });
 });
 
-describe('TD.isDuration',function(){
-  test('00:00',function () {
+describe('TD.isDuration', function () {
+  test('00:00', function () {
     expect(TD.isDuration('00:00')).toBeTruthy();
   });
-  test('24:60',function () {
-    expect(TD.isDuration('24:60')).toBeFalsy();
+  test('01:01', function () {
+    expect(TD.isDuration('01:01')).toBeTruthy();
+  });
+  test('00:60', function () {
+    expect(TD.isDuration('00:60')).toBeFalsy();
+  });
+  test('48:59', function () {
+    expect(TD.isDuration('48:59')).toBeTruthy();
+  });
+  test('128:00', function () {
+    expect(TD.isDuration('128:00')).toBeTruthy();
+  });
+  test('-', function () {
+    expect(TD.isDuration('-')).toBeFalsy();
   });
 });
